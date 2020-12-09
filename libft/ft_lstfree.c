@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_to_array.c                                    :+:      :+:    :+:   */
+/*   ft_lstfree.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksalmi <ksalmi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/10 13:12:12 by ksalmi            #+#    #+#             */
-/*   Updated: 2019/12/13 16:59:31 by ksalmi           ###   ########.fr       */
+/*   Created: 2019/12/13 14:25:03 by ksalmi            #+#    #+#             */
+/*   Updated: 2019/12/13 16:58:03 by ksalmi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "fillit.h"
+#include "libft.h"
 
-char	**list_to_array(t_list *list, int i)
+void	ft_lstfree(t_list *head)
 {
-	t_list	*current;
-	char	**arr;
-	int		j;
+	t_list *tmp;
 
-	if (!(arr = (char **)malloc(sizeof(char*) * (i + 1))) || !list)
-		exit(0);
-	current = list;
-	j = 0;
-	while (current)
+	if (head)
 	{
-		arr[j] = current->content;
-		j++;
-		current = current->next;
+		while (head)
+		{
+			tmp = head;
+			head = head->next;
+			free(tmp);
+		}
 	}
-	arr[j] = NULL;
-	ft_lstfree(list);
-	return (arr);
 }
