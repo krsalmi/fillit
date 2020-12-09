@@ -5,6 +5,6 @@ the input, the program displays the tetriminos, each one represented with a capi
 letter, placed in the smallest square possible. This project was coded in
 collaboration with Lev Askolin.  
 To test the program with for ex. the example file I've included, after `make all`, run
-the program with `example_file.txt` as argument.
+the program `fillit` with `example_file.txt` as argument.
   
 The library used is [libft](https://github.com/krsalmi/libft), another school project and the function to read each line of the file is [get_next_line](https://github.com/krsalmi/get_next_line).
